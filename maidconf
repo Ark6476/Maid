@@ -1,0 +1,19 @@
+#Maid configuration file. Place in either /etc/maidconf or ~/.maidconf
+#~/.maidconf will be read first. If it does not exist /etc/maidconf will be used instead
+
+#[Unique name of the task]
+##Required values
+#directory=path/to/dir
+#match=regex
+##Optional values
+#age=0y-0m-1d-0h-0m
+#keep=0
+#action=rm -f
+
+#Removes all but the last two files that contain the word 'foo' in the filename and are over two months old
+[Clean up old log files]
+directory=/tmp
+match=.*foo.*
+age=0y-0m-0d-0h-0m
+keep=0
+action=rm -f
