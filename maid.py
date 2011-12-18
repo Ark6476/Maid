@@ -63,7 +63,10 @@ class Task:
 def read_config():
 	tasks = []
 	config = ConfigParser.ConfigParser()
-	config.read(os.environ['HOME']+"/.maidconf")
+	if os.path.isfile(os.environ['HOME']+"/.maidconf"):
+		config.read(os.environ['HOME']+"/.maidconf")
+	else:
+		config.read("/etc/maidconf")
 	for sec in config.sections():
 		#Required values
 		try:

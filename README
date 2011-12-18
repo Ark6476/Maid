@@ -1,0 +1,15 @@
+Maid is a little python script I wrote for keeping things tidy on my linux servers.
+
+
+Example:
+Let's say you wanted to remove log files that were older than a month old. However, you don't want to delete the latest log file. All you have to do is edit your maidconf file (located in either /etc/maidconf ~/.maidconf) as such:
+
+[Clean up old log files]
+directory=/path/to/log/files
+match=foo.log.* #regular expression
+age=0y-1m-0d-0h-0m
+keep=1
+action=rm -f
+
+
+Maid can be combined with cron to periodicly organize files.
