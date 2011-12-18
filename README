@@ -12,4 +12,4 @@ keep=1
 action=rm -f
 
 
-Maid can be combined with cron to periodicly organize files.
+Maid can be combined with cron to periodically organize files.
